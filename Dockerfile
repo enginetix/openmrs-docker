@@ -9,10 +9,10 @@ RUN echo mysql-server mysql-server/root_password password Admin123 | debconf-set
   apt-get install -y mysql-server
 
 # get platform war
-RUN curl -sL http://sourceforge.net/projects/openmrs/files/releases/OpenMRS_Platform_1.10.0/openmrs.war/download -o /usr/local/tomcat/webapps/openmrs.war
+RUN curl -sL http://sourceforge.net/projects/openmrs/files/releases/OpenMRS_Platform_1.11.2/openmrs.war/download -o /usr/local/tomcat/webapps/openmrs.war
 
 # get and install modules
-RUN curl -sL http://sourceforge.net/projects/openmrs/files/releases/OpenMRS_2.1/openmrs-2.1-modules.zip/download -o /root/mods.zip && mkdir -p /usr/local/tomcat/openmrs/modules  && unzip -j -d /usr/local/tomcat/openmrs/modules /root/mods.zip && rm /root/mods.zip
+RUN curl -sL http://sourceforge.net/projects/openmrs/files/releases/OpenMRS_2.2/openmrs-2.2-modules.zip/download -o /root/mods.zip && mkdir -p /usr/local/tomcat/openmrs/modules  && unzip -j -d /usr/local/tomcat/openmrs/modules /root/mods.zip && rm /root/mods.zip
 
 ADD init_db.sh /tmp/init_db.sh
 ADD openmrs_jg.sql /tmp/openmrs_jg.sql
