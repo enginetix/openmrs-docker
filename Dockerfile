@@ -1,9 +1,9 @@
 FROM tomcat:7.0.59-jre7
 MAINTAINER Johan Gielstra "jgielstra@yahoo.com"
 
-RUN apt-get update
-RUN apt-get -y install libcurl4
-RUN apt-get -y install curl
+RUN apt update
+RUN apt install libcurl4
+RUN apt install curl
 
 RUN echo mysql-server mysql-server/root_password password Admin123 | debconf-set-selections;\
   echo mysql-server mysql-server/root_password_again password Admin123 | debconf-set-selections;\
