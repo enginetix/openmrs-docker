@@ -1,4 +1,4 @@
-FROM tomcat:7.0.59-jre7
+FROM tomcat:7.0.88-jre7
 MAINTAINER Johan Gielstra "jgielstra@yahoo.com"
 
 RUN apt-get update
